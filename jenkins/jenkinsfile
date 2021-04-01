@@ -4,7 +4,7 @@ pipeline{
 	    stage('build'){
 	     steps{
            echo "first build"
-	        }
+	        }      
 	     }
 	    stage('test'){
 	     steps{
