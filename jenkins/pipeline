@@ -1,0 +1,27 @@
+pipeline{
+	agent any
+	  stages{
+	    stage('build'){
+	     steps{
+           echo "first build"
+	        }
+	     }
+	    stage('test'){
+	     steps{
+	      echo "first test"
+	        }
+	     }
+	     stage('timeout'){
+	       steps{
+	       retry(3){
+	         sh 'i am not going to run'
+	         }
+	       }
+	     }
+	    stage('deploy'){
+	      steps{
+	       echo "deploy stage"
+	       }
+	      }
+	   }
+    }
